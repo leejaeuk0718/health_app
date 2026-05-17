@@ -1,5 +1,29 @@
+server:
+  port: 8080
+
 spring:
+  application:
+    name: investlog
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/investlog?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
   data:
     redis:
       host: localhost
       port: 6379
+
+jwt:
+  secret: 1a2s3d4f5g6h7j8k9lpoiuyttrewwqzxcvbnm1a2s3d4f5g6h7j8k9l
+  access-token-expiration: 3600000
